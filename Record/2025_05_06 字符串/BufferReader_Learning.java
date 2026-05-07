@@ -1,9 +1,10 @@
 import java.io.*;
 import java.util.*;
-import java.util.stream.IntStream;
 
-
-
+/**
+ * 学习演进记录 - 码蹄杯备战 Day 1
+ * 目标：Java 组字符串模拟、高效 IO、映射查找
+ */
 public class BufferReader_Learning {
     public static void main(String[] args) throws IOException {
 
@@ -67,7 +68,7 @@ public class BufferReader_Learning {
          * A: 循环内频繁 toString() 和 System.out.print() 会触发大量 IO 和内存复制，导致 TLE；
          * 循环外一次性输出是高性能代码的核心准则。
          */
-    	/*
+
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         
         // 1. 读入字典数量（使用 Integer.parseInt 规避 read() 的字符陷阱）
@@ -113,180 +114,5 @@ public class BufferReader_Learning {
         
         // 4. 输出
         System.out.println(result.toString());
-        */
-    	/*
-    	 * 有一个只可能包含大写字母、小写字母的字符串s。
-    	 * 每次可从其中取出一个字符用于拼接MATIJI和matiji字符串。
-    	 * 现在问，字符串s最多能拼出多少组完整的MATIJI和matiji，分开统计输出。
-    
-    	
-    	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    	
-    	String line = input.readLine();
-    	int[] MATIJI = new int[5];
-    	int[] matiji = new int[5];
-    	
-    	char[] arr1 = line.toCharArray();
-    	
-    	for(int i = 0 ; i< arr1.length ; i++) {
-    		switch( arr1[i] ) {
-    		case 'm':
-    			matiji[0]++;
-    			break;
-    		case 'a':
-    			matiji[1]++;
-    			break;
-    		case 't':
-    			matiji[2]++;
-    			break;
-    		case 'i':
-    			matiji[3]++;
-    			break;
-    		case 'j':
-    			matiji[4]++;
-    			break;
-    		case 'M':
-    			MATIJI[0]++;
-    			break;
-    		case 'A':
-    			MATIJI[1]++;
-    			break;
-    		case 'T':
-    			MATIJI[2]++;
-    			break;
-    		case 'I':
-    			MATIJI[3]++;
-    			break;
-    		case 'J':
-    			MATIJI[4]++;
-    			break;
-    		default:
-    			break;
-    		
-    		}
-    		
-    	}
-    	matiji[3] /= 2;
-    	MATIJI[3] /= 2;
-    	
-    	int MATIJI_NUMBER = IntStream.of(MATIJI).min().getAsInt();
-    	int matiji_NUMBER = IntStream.of(matiji).min().getAsInt();
-    	
-    	System.out.print(MATIJI_NUMBER+" "+matiji_NUMBER);
-    	*/
-    	
-    	
-    	/*
-    	 * 
-    	 *  伍子胥需要统计楚平王墓中陪葬品的铭文信息，
-    	 *  铭文可看成一个字符串s,s仅包含大小写英文字母与数字。
-			现需计算这段铭文中所有字符的 ASCII 码之和。
-    	 
-    	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    	String line = input.readLine();
-    	
-    	char[] charline = line.toCharArray();
-    	int sum = 0;
-    	for(int i = 0 ; i < charline.length ; i++) {
-    		sum +=(int)charline[i];
-    	}
-    	
-    	System.out.print(sum);
-    	
-    	*/
-    	
-    	
-    	/*
-    	 * 现在有n个长度均为m的仅包含小写英文字母的字符串 
-    	 	求 n 个字符串中，所有不重复组合的修改代价总和
-	    	 	   1. 这一位总共有 N 个字符。
-				   2. 任意选两个字符配对，总配对数为：TotalPairs = N * (N - 1) / 2。
-				   3. 统计这一位中，字符相同的配对数：SamePairs = Σ (每个字母出现次数 * (次数 - 1) / 2)。
-				   4. 那么，这一位对总代价的贡献 = TotalPairs - SamePairs。
-				    	 
-    
-    	
-    	
-    	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    	StringTokenizer st =  new StringTokenizer(input.readLine());
-    	
-    	int n  =Integer.parseInt(st.nextToken());
-    	int m  =Integer.parseInt(st.nextToken());
-    	
-    	String[] lines = new String[n];
-    	
-    	for(int lineNumber = 0; lineNumber < n ; lineNumber ++) {
-    		lines[lineNumber] = input.readLine();
-    		
-    	}
-    	
-    	
-    	long sum = 0;
-    			
-    	for(int i = 0 ; i < m ; i++) {
-    		int[] counts = new int[26];
-    		long totalPairs = 0;
-    		long samePairs = 0;
-    		for(int j = 0 ; j < n ; j++ ) {
-    			// 得到每一个字符串的 第 i 个字符
-    			
-    			char c = lines[j].charAt(i);
-    			counts[c-'a']++;
-    		}
-    		
-    		for(int c = 0 ; c < counts.length ; c++ ) {
-    		
-    			
-    			if(counts[c] > 1) {
-    				samePairs += (long) counts[c] * (counts[c]-1)/2;
-   
-    			}
-    			
-    		}
-    		
-    		totalPairs = (long)n * (n - 1 )/2;
-    		
-    		sum += totalPairs - samePairs;
-    		
-    	}
-    	
-    	System.out.print(sum);
-    	
-    	
-    	 */
-    	
-    		
-    	/*
-    	
-    		该字符串开头a个字符和结尾b个字符，并输出删除后的字符串
-    	 */
-    	
-    	
-    	
-    	
-    	/*
-    	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    	String line = input.readLine();
-    	
-    	StringTokenizer st = new StringTokenizer(input.readLine());
-    	int a = Integer.parseInt(st.nextToken());
-    	int b = Integer.parseInt(st.nextToken());
-    	char[] char1 =  line.toCharArray();
-    	for(int i = a ; i < char1.length - b; i++) {
-    		
-    		System.out.print(char1[i]);
-    	}
-    	
-    	
-    	*/
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
     }
 }
