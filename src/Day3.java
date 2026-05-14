@@ -75,6 +75,9 @@ public class Day3 {
  * * Q: StringBuilder 在此处的必要性？
  * A: 频繁拼接字符时，StringBuilder 避免了产生大量 String 临时对象，节省内存开销。
  */
+		/*
+		 * 暴力查找
+		
 		Scanner input = new Scanner(System.in);
 		char[] line = input.next().toCharArray();
 		int i = 0;
@@ -95,5 +98,57 @@ public class Day3 {
 			i++;
 		}
 		System.out.print(count);
+		 */
+		
+		/*
+		 * 滑动思想
+		 * 
+		 * 想象一下将StringBuilder 当作一个取景框，Line中的数据排队过取景窗，只要取景窗中有了六个字符我们就比较一下，大于六个就删除第一个
+		 */
+		
+		Scanner input = new Scanner(System.in);
+		
+		char[] Line = input.next().toCharArray();
+		int count = 0;
+		StringBuilder Window = new StringBuilder();
+		
+		for(int i  = 0 ; i < Line.length ; i++) {
+			
+			Window.append(Line[i]);
+			
+			
+			if( Window.length() > 6 ) {
+			
+				Window.deleteCharAt(0); // StringBuilder 在删除数据的时候不仅会删除当前下标的数据，还会将后续下标的数据向前移动
+				
+			}
+			
+			if( Window.length() == 6 && "matiji".equals(Window.toString() )) {
+				
+				count ++;
+				
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
