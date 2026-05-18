@@ -18,12 +18,12 @@ public class Day9 {
 		int n = input.nextInt();
 		int q = input.nextInt();
 		
-		int[][] sum = new int[n+1][26];
+		int[][] sum = new int[n+1][26];// 从第一个到第i个之间出现的每个字母计数
 		String line = input.next();
 		
 		for(int i = 1 ; i <=n ; i++) {
 			for(int j = 0 ; j < 26 ; j++) {
-				
+				// 继承上一个状态 ， 无论n为多大只循环二十六次
 				sum[i][j] = sum[i-1][j];
 				
 			}
@@ -60,10 +60,12 @@ public class Day9 {
 		
 		
 		
-		long MOD = 998244353;
+	
 		// 使用 BufferedReader 和 StringTokenizer 替代 Scanner，解决输入超时问题
+		 */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         // 使用 PrintWriter 替代 System.out.println，解决输出超时问题
+        long MOD = 998244353;
         PrintWriter out = new PrintWriter(System.out);
         StringTokenizer st = new StringTokenizer(br.readLine());
 
