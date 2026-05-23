@@ -81,7 +81,7 @@ public class Day12 {
 		/*
 		 * 有一个长度为n的序列，现在需要对序列中的数字重新赋值，对与第i个元素来说，新的数值就是ai在整个序列中是第几小的
 		 * 第几小就是小于当前元素的数字个数+1
-		 */
+		
 		
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -121,21 +121,31 @@ public class Day12 {
 			System.out.print(count+1 + " ");
 		}
 		
-		
+		 */
 
 
 		
 		
+		HashMap<Integer, Integer> ma = new HashMap();
+		
+		
+		ma.put(1, 1);
+		ma.put(2, 2);
+		ma.put(3, 3);
+		ma.put(4, 4);
+		
+		
+		for(Map.Entry<Integer, Integer> entry : ma.entrySet()) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
+			
+		}
 		
 		
 		
 		
 		
-		
-		
-		
-		
-		
+	
+	
 		
 		
 		
