@@ -2,7 +2,7 @@ package GuoSai;
 import java.io.*;
 import java.util.*;
 
-public class day3_0713 {
+public class day4_0713 {
 	public static void main(String[] args) throws IOException {
 		
 		
